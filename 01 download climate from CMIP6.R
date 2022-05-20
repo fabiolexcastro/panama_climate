@@ -18,6 +18,11 @@ print(ssps); print(prdo); print(mdls); print(base)
 
 vars <- c('prec', 'tmax', 'tmin')
 
+# Limite 
+cntr <- 'PAN'
+limt <- geodata::gadm(country = cntr, level = 0, path = '../tmpr')
+plot(limt)
+
 # Function ----------------------------------------------------------------
 
 # Proof
@@ -40,6 +45,8 @@ down <- function(ssp, mdl, prd){
     return(dirname(dout))
     
   })
+  
+  
   
   
   
