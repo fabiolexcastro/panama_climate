@@ -70,8 +70,21 @@ down <- function(ssp, mdl, prd){
   
 }
 
-
 # To apply these function -------------------------------------------------
-
+purrr::map(.x = 1:length(ssps), .f = function(s){
+  
+  purrr::map(.x = 1:length(mdls), .f = function(m){
+    
+    purrr::map(.x = 1:length(prdo), .f = function(p){
+      
+      down(ssp = ssps[s], mdl = mdls[m], prd = prdo[p])
+      
+    })
+    
+    
+  })
+  
+  
+})
 
 
