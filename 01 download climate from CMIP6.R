@@ -33,6 +33,9 @@ down <- function(ssp, mdl, prd){
     
     # i <- 1
     path <- glue('{base}/{mdl}/{ssp}/wc2.1_30s_{vars[i]}_{mdl}_{ssp}_{prd}_tile-28.tif')
+    dout <- glue('../raster/future/cm6/tile/{ssp}/{mdl}')
+    ifelse(!file.exists(dout), dir_create(dout), print('Exists'))
+    dout <- glue('{dout}/{basename(path)}')
     
     
   })
