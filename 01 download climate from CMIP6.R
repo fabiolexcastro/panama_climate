@@ -28,7 +28,13 @@ down <- function(ssp, mdl){
   
   cat(ssp, ' ', mdl, '\t')
   
-  
+  purrr::map(.x = 1:length(vars), .f = function(i){
+    
+    # i <- 1
+    path <- glue('{base}/{mdl}/{ssp}/wc2.1_30s_{vars[i]}_{mdl}_{ssp}_{prdo}_tile-28.tif')
+    
+    
+  })
   
   
   
