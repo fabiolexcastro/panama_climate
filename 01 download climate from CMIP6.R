@@ -57,7 +57,14 @@ down <- function(ssp, mdl, prd){
     return(rs)
   })
   
-  plot(rst[[1]][[1]])
+  # To write these rasters
+  dout <- glue('../raster/future/cm6/panama/{ssp}/{mdl}')
+  ifelse(!file.exists(dout), dir_create(dout), print('Exists'))
+  purrr::map(.x = 1:length(rst), .f = function(k){
+    cat('Start ', vars[k], '\n')
+    terra::writeRaster(x = rst[[k]], filename = glue('{dout}/{vars[k]}.tif'), overwrite = TRUE) 
+    cat('Done!\n')
+  })
   
   
   
