@@ -66,8 +66,12 @@ down <- function(ssp, mdl, prd){
     cat('Done!\n')
   })
   
-  
+  cat('Finish-----\n')
   
 }
+
+
+# To apply these function -------------------------------------------------
+
 
 
