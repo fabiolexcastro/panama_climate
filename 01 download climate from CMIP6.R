@@ -48,6 +48,17 @@ down <- function(ssp, mdl, prd){
   
   out <- unlist(out) %>% unique()
   fls <- dir_ls(out) %>% as.character() %>% grep('.tif$', ., value = T)
+  rst <- purrr::map(.x = 1:length(fls), .f = function(j){
+    cat(fls[j], '\n')
+    rs <- terra::rast(fls[j])
+    rs <- terra::crop(rs, limt)
+    rs <- terra::mask(rs, limt)
+    cat('Done!\n')
+    return(rs)
+  })
+  
+  plot(rst[[1]][[1]])
+  
   
   
 }
