@@ -46,8 +46,7 @@ down <- function(ssp, mdl, prd){
     
   })
   
-  
-  
+  out <- unlist(out) %>% unique()
   
   
 }
