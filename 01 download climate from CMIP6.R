@@ -47,6 +47,7 @@ down <- function(ssp, mdl, prd){
   })
   
   out <- unlist(out) %>% unique()
+  fls <- dir_ls(out) %>% as.character() %>% grep('.tif$', ., value = T)
   
   
 }
