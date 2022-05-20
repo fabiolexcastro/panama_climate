@@ -23,15 +23,16 @@ vars <- c('prec', 'tmax', 'tmin')
 # Proof
 ssp <- ssps[1]
 mdl <- mdls[1]
+prd <- prdo[1]
 
-down <- function(ssp, mdl){
+down <- function(ssp, mdl, prd){
   
   cat(ssp, ' ', mdl, '\t')
   
   purrr::map(.x = 1:length(vars), .f = function(i){
     
     # i <- 1
-    path <- glue('{base}/{mdl}/{ssp}/wc2.1_30s_{vars[i]}_{mdl}_{ssp}_{prdo}_tile-28.tif')
+    path <- glue('{base}/{mdl}/{ssp}/wc2.1_30s_{vars[i]}_{mdl}_{ssp}_{prd}_tile-28.tif')
     
     
   })
