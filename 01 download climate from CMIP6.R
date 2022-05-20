@@ -58,7 +58,7 @@ down <- function(ssp, mdl, prd){
   })
   
   # To write these rasters
-  dout <- glue('../raster/future/cm6/panama/{ssp}/{mdl}')
+  dout <- glue('../raster/future/cm6/panama/{ssp}/{mdl}/{prd}')
   ifelse(!file.exists(dout), dir_create(dout), print('Exists'))
   purrr::map(.x = 1:length(rst), .f = function(k){
     cat('Start ', vars[k], '\n')
