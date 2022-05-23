@@ -37,8 +37,25 @@ vars <- c('prec', 'tmax', 'tmin')
 
 # Convert stack to each one layer -----------------------------------------
 
-
-
+purrr::map(.x = 1:length(ssps), .f = function(s){
+  
+  purrr::map(.x = 1:length(mdls), .f = function(m){
+    
+    purrr::map(.x = 1:length(prds), .f = function(p){
+      
+      purrr::map(.x = 1:length(vars), .f = function(v){
+        
+        cat(ssps[s], mdls[m], prdo[p], vars[v], '\t', sep = ' ')
+        pth <- glue('{root}/{ssps[s]}/{mdls[m]}/{prdo[p]}/{vars[v]}.tif')
+        terra::rast(pth)
+        
+      })
+      
+    })
+    
+  })
+  
+})
 
 
 
