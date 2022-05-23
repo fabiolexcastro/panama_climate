@@ -36,10 +36,11 @@ rsl <- rsaga.geoprocessor(
   param = list(PREDICTORS = srtm,
                REGRESSION = fout,
                DEPENDENT = finp),
-  env = env)
+  env = envr)
 
 rs.srtm <- terra::rast(fout)
 fout
-
+plot(rs.srtm)
+rs.srtm
 
 
