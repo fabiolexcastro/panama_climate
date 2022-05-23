@@ -1,7 +1,7 @@
 
 # Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(geodata, rgeos, gtools, dismo, sf, tidyverse, fs, corrplot)
+pacman::p_load(geodata, spatialEco, rgeos, gtools, dismo, sf, tidyverse, fs, corrplot)
 
 g <- gc(reset = TRUE)
 rm(list = ls())
@@ -21,7 +21,10 @@ srtm <- terra::project(srtm, 'epsg:4326')
 hlls <- terra::rast(hlls)
 hlls <- terra::project(hlls, 'epsg:4326')
 
-# Climate information 
+terra::writeRaster(x = srtm, filename = '../raster/topography/srtm.tif')
+terra::writeRaster(x = hlls, filename = '../raster/topography/hlls.tif')
 
+# Climate information 
+library(spatialEco)
 
 
