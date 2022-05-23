@@ -18,6 +18,9 @@ plot(terra::rast(hlls))
 srtm <- terra::rast(srtm)
 srtm <- terra::project(srtm, 'epsg:4326')
 
+hlls <- terra::rast(hlls)
+hlls <- terra::project(hlls, 'epsg:4326')
+
 # Climate information 
 
 
