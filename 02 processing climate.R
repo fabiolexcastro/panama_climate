@@ -45,9 +45,14 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       
       purrr::map(.x = 1:length(vars), .f = function(v){
         
-        cat(ssps[s], mdls[m], prdo[p], vars[v], '\t', sep = ' ')
-        pth <- glue('{root}/{ssps[s]}/{mdls[m]}/{prdo[p]}/{vars[v]}.tif')
-        terra::rast(pth)
+        cat(ssps[s], mdls[m], prds[p], vars[v], '\t', sep = ' ')
+        pth <- glue('{root}/{ssps[s]}/{mdls[m]}/{prds[p]}/{vars[v]}.tif')
+        rst <- terra::rast(pth)
+        
+        for(i in 1:nlyr(rst)){
+          terra::writeRaster(x = rst[[i]], filename = glue('{dirname(pth)}/{vars[v]}_{i}.tif'))
+        }
+        
         
       })
       
