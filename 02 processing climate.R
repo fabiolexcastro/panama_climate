@@ -50,9 +50,10 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
         rst <- terra::rast(pth)
         
         for(i in 1:nlyr(rst)){
-          terra::writeRaster(x = rst[[i]], filename = glue('{dirname(pth)}/{vars[v]}_{i}.tif'))
+          terra::writeRaster(x = rst[[i]], filename = glue('{dirname(pth)}/{vars[v]}_{i}.tif'), overwrite = TRUE)
         }
         
+        file.remove(pth)
         
       })
       
