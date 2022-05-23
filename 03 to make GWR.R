@@ -30,6 +30,16 @@ plot(rast(hlls))
 finp <- glue('{root}/{ssps[1]}/{mdls[1]}/{prds[1]}/tmax_1.tif')
 fout <- glue('{dirname(finp)}/gwr_{basename(finp)}.tif')
 
+rsl <- rsaga.geoprocessor(
+  lib = 'statistics_regression',
+  module = 'GWR for Grid Downscaling',
+  param = list(PREDICTORS = srtm,
+               REGRESSION = fout,
+               DEPENDENT = finp),
+  env = env)
+
+rs.srtm <- terra::rast(fout)
+fout
 
 
 
