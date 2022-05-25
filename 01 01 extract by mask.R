@@ -10,7 +10,7 @@ rm(list = ls())
 # Load data ---------------------------------------------------------------
 path <- '../raster/future/cm6/tile'
 ssps <- c('ssp126', 'ssp585')
-mdls <- c('FIO-ESM2-0', 'MPI-ESM1-2-HR', 'MPI-ESM1-2-LR')
+mdls <- c('FIO-ESM-2-0', 'MPI-ESM1-2-HR', 'MPI-ESM1-2-LR')
 prds <- c('2021-2040', '2041-2060', '2061-2080')
 limt <- terra::vect('../shp/base/panama.shp')
 
@@ -33,6 +33,13 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       ppt <- grep('prec', fls, value = T) %>% terra::rast()
       tmx <- grep('tmax', fls, value = T) %>% terra::rast()
       tmn <- grep('tmin', fls, value = T) %>% terra::rast()
+      
+      ppt <- terra::crop(ppt, limt) %>% terra::mask(., limt)
+      tmx <- terra::crop(tmx, limt) %>% terra::mask(., limt)
+      tmn <- terra::crop(tmn, limt) %>% terra::mask(., limt)
+      
+      # To write these rasters
+      
       
       
     })
