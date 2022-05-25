@@ -45,7 +45,7 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       
       purrr::map(.x = 1:length(fles), .f = function(i){
         
-        fipn <- fles[i]
+        finp <- fles[i]
         fout <- glue('{dinp}/gwr_{basename(finp)}')
         
         rslt <- rsaga.geoprocessor(
@@ -54,7 +54,9 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
           param = list(PREDICTORS = srtm,
                        REGRESSION = fout,
                        DEPENDENT = finp),
-          env = env)
+          env = envr)
+        
+        
         
         
       })
