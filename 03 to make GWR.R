@@ -41,10 +41,20 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       vars <- c('prec', 'tmax', 'tmin')
       fles <- grep(paste0(vars, collapse = '|'), fles, value = TRUE)
       fles
+      i <- 1 # Correr y borrar
       
       purrr::map(.x = 1:length(fles), .f = function(i){
         
+        fipn <- fles[i]
+        fout <- glue('{dinp}/gwr_{basename(finp)}')
         
+        rslt <- rsaga.geoprocessor(
+          lib = 'statistics_regression',
+          module = 'GWR for Grid Downscaling',
+          param = list(PREDICTORS = srtm,
+                       REGRESSION = fout,
+                       DEPENDENT = finp),
+          env = env)
         
         
       })
