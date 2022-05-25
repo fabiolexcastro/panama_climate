@@ -44,6 +44,7 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       # Filtering only for tmax and tmin
       fles <- grep('tm', fles, value = TRUE)
       fles <- grep(paste0(c('tmax', 'tmin'), collapse = '|'), fles, value = TRUE)
+      fles <- mixedsort(fles)
       print(fles)
     
       purrr::map(.x = 1:length(fles), .f = function(i){
