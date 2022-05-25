@@ -35,7 +35,7 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
     purrr::map(.x = 1:length(prds), .f = function(p){
       
       cat(ssps[s], mdls[m], prds[p], '\n', sep = ' ')
-      dinp <- glue('../raster/future/cm6/panama/{ssps[s]}/{mdls[m]}/prds[p]}')
+      dinp <- glue('../raster/future/cm6/panama/{ssps[s]}/{mdls[m]}/{prds[p]}')
       fles <- dir_ls(dinp)
       fles <- as.character(fles)
       
