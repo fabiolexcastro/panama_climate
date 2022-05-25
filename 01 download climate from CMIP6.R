@@ -22,6 +22,8 @@ vars <- c('prec', 'tmax', 'tmin')
 cntr <- 'PAN'
 limt <- geodata::gadm(country = cntr, level = 0, path = '../tmpr')
 plot(limt)
+dir.create('../shp/base', recursive = TRUE)
+writeVector(limt, '../shp/base/panama.shp')
 
 # Function ----------------------------------------------------------------
 
@@ -87,5 +89,9 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
   
   
 })
+
+
+# URL failed
+https://geodata.ucdavis.edu/cmip6/tiles//FIO-ESM-2-0/ssp126/wc2.1_30s_prec_FIO-ESM-2-0_ssp126_2021-2040_tile-28.tif'
 
 
