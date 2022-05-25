@@ -38,6 +38,16 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       dinp <- glue('../raster/future/cm6/panama/{ssps[s]}/{mdls[m]}/{prds[p]}')
       fles <- dir_ls(dinp)
       fles <- as.character(fles)
+      vars <- c('prec', 'tmax', 'tmin')
+      fles <- grep(paste0(vars, collapse = '|'), fles, value = TRUE)
+      fles
+      
+      purrr::map(.x = 1:length(fles), .f = function(i){
+        
+        
+        
+        
+      })
       
       
       
