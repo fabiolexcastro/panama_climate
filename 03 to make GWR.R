@@ -56,22 +56,17 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
                        DEPENDENT = finp),
           env = envr)
         
-        
-        
-        
       })
-      
-      
       
     })
     
-    
   })
-  
-  
   
 })
 
+
+
+# Finish -----------------------------------------------------------------
 
 
 
