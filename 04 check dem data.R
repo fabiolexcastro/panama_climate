@@ -20,8 +20,8 @@ rslt
 min(rslt, na.rm = TRUE)
 
 # To write the raster -----------------------------------------------------
-dout <- '../raster/topograhy/DEM_SAGA_OK.tif'
-terra::writeRaster(dout, filename = dout, overwrite = FALSE)
+dout <- '../raster/topograhy/pan/DEM_SAGA_OK.tif'
+terra::writeRaster(rslt, filename = dout, overwrite = FALSE)
 
 # Finish ------------------------------------------------------------------
 
