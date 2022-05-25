@@ -24,12 +24,57 @@ hlls <-  '../raster/topograhy/hlls.tif'
 plot(rast(srtm))
 plot(rast(hlls))
 
+# To apply the function ---------------------------------------------------
+
+s <- m <- p <- 1 # Correr y borrar
+
+purrr::map(.x = 1:length(ssps), .f = function(s){
+  
+  purrr::map(.x = 1:length(mdls), .f = function(m){
+    
+    purrr::map(.x = 1:length(prds), .f = function(p){
+      
+      cat(ssps[s], mdls[m], prds[p], '\n', sep = ' ')
+      dinp <- glue('../raster/future/cm6/panama/{ssps[s]}/{mdls[m]}/prds[p]}')
+      fles <- dir_ls(dinp)
+      fles <- as.character(fles)
+      
+      
+      
+    })
+    
+    
+  })
+  
+  
+  
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Testing GWR  ------------------------------------------------------------
 
 finp <- glue('{root}/{ssps[1]}/{mdls[1]}/{prds[1]}/prec_1.tif')
 fout <- glue('{dirname(finp)}/gwr_{basename(finp)}.tif')
-
 
 rsl <- rsaga.geoprocessor(
   lib = 'statistics_regression',
