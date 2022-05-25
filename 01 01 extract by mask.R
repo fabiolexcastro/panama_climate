@@ -39,8 +39,17 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       tmn <- terra::crop(tmn, limt) %>% terra::mask(., limt)
       
       # To write these rasters
+      out <- glue('../raster/future/cm6/panama/{ssps[s]}/{mdls[m]}/{prds[p]}')
       
+      purrr::map(.x = 1:12, .f = function(i){
+        
+        terra::writeRaster(x = ppt[[i]], filename = glue('{out}/prec_{i}.tif'), overwrite = T)
+        terra::writeRaster(x = tmx[[i]], filename = glue('{out}/tmax_{i}.tif'), overwrite = T)
+        terra::writeRaster(x = tmn[[i]], filename = glue('{out}/tmin_{i}.tif'), overwrite = T)
+        
+      })
       
+      cat('Done', ssps[s], mdls[m], prds[p], '\n', sep = ' ')
       
     })
     
