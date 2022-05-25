@@ -18,3 +18,12 @@ rslt <- srtm
 rslt[which.lyr(rslt < 0)] <- 0
 rslt
 min(rslt, na.rm = TRUE)
+
+# To write the raster -----------------------------------------------------
+dout <- '../raster/topograhy/DEM_SAGA_OK.tif'
+terra::writeRaster(dout, filename = dout, overwrite = FALSE)
+
+# Finish ------------------------------------------------------------------
+
+
+
