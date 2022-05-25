@@ -27,8 +27,9 @@ plot(rast(hlls))
 
 # Testing GWR  ------------------------------------------------------------
 
-finp <- glue('{root}/{ssps[1]}/{mdls[1]}/{prds[1]}/tmax_1.tif')
+finp <- glue('{root}/{ssps[1]}/{mdls[1]}/{prds[1]}/prec_1.tif')
 fout <- glue('{dirname(finp)}/gwr_{basename(finp)}.tif')
+
 
 rsl <- rsaga.geoprocessor(
   lib = 'statistics_regression',
