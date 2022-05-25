@@ -40,13 +40,16 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
       fles <- as.character(fles)
       vars <- c('prec', 'tmax', 'tmin')
       fles <- grep(paste0(vars, collapse = '|'), fles, value = TRUE)
-      fles
-      i <- 1 # Correr y borrar
       
+      # Filtering only for tmax and tmin
+      fles <- grep('tm', fles, value = TRUE)
+      print(fles)
+    
       purrr::map(.x = 1:length(fles), .f = function(i){
         
         finp <- fles[i]
         fout <- glue('{dinp}/gwr_{basename(finp)}')
+        
         
         rslt <- rsaga.geoprocessor(
           lib = 'statistics_regression',
