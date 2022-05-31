@@ -48,7 +48,7 @@ purrr::map(.x = 1:length(ssps), .f = function(s){
     purrr::map(.x = 1:length(prds), .f = function(p){
       
       cat(ssps[s], mdls[m], prds[p], '\n', sep = ' ')
-      dinp <- glue('G:/SAGA/modelos/{prds[p]}/{ssps[s]}')
+      dinp <- glue('G:/SAGA/modelos/{mdls[m]}/{prds[p]}/{ssps[s]}')
       fles <- dir_ls(dinp)
       fles <- as.character(fles)
       vars <- c('prec', 'tmax', 'tmin')
