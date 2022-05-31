@@ -31,6 +31,7 @@ srtm_rast <- terra::crop(srtm_rast, limt)
 srtm_rast <- terra::mask(srtm_rast, limt)
 terra::writeRaster(x = srtm_rast, filename = '../raster/topograhy/Dem_5m/WGC84/dem_pan_limt.tif', overwrite = TRUE)
 
+srtm <- '../raster/topograhy/Dem_5m/WGC84/dem_pan_limt.tif'
 hlls <-  '../raster/topograhy/hlls.tif'
 
 plot(rast(srtm))
