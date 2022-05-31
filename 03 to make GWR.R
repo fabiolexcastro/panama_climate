@@ -23,7 +23,7 @@ srtm <-  '../raster/topograhy/srtm.tif'
 # Check SRTM raster 
 srtm_rast <- terra::rast(srtm)
 srtm_rast
-limt <- terra::geodata(country = 'PAN', level = 0, path = '../tmpr')
+limt <- geodata::gadm(country = 'PAN', level = 0, path = '../tmpr')
 srtm_rast <- terra::crop(srtm_rast, limt)
 srtm_rast <- terra::mask(srtm_rast, limt)
 
