@@ -29,6 +29,7 @@ srtm_rast
 limt <- geodata::gadm(country = 'PAN', level = 0, path = '../tmpr')
 srtm_rast <- terra::crop(srtm_rast, limt)
 srtm_rast <- terra::mask(srtm_rast, limt)
+terra::writeRaster(x = srtm_rast, filename = '../raster/topograhy/Dem_5m/WGC84/dem_pan_limt.tif', overwrite = TRUE)
 
 hlls <-  '../raster/topograhy/hlls.tif'
 
