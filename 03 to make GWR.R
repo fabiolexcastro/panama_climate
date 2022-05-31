@@ -6,6 +6,9 @@ pacman::p_load(geodata, spatialEco, glue, rgeos, gtools, dismo, sf, tidyverse, f
 g <- gc(reset = TRUE)
 rm(list = ls())
 
+# Change the temporal files directory
+terraOptions(tempdir = "G:/ProyectoR/tmpr")
+
 # Environmental SAGA ------------------------------------------------------
 envr <- 'D:/Cárdenas-Castillero/Trabajo/MiAmbiente/Shape and info/saga-8.2.0_x64/saga-8.2.0_x64'
 envr <- rsaga.env(envr)
