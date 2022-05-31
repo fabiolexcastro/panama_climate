@@ -20,7 +20,12 @@ prds <- c('2021-2040', '2041-2060', '2061-2080')
 vars <- c('prec', 'tmax', 'tmin')
 srtm <-  '../raster/topograhy/srtm.tif'
 
+# Check SRTM raster 
 srtm_rast <- terra::rast(srtm)
+srtm_rast
+limt <- terra::geodata(country = 'PAN', level = 0, path = '../tmpr')
+srtm_rast <- terra::crop(srtm_rast, limt)
+srtm_rast <- terra::mask(srtm_rast, limt)
 
 hlls <-  '../raster/topograhy/hlls.tif'
 
