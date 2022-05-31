@@ -19,6 +19,9 @@ mdls <- c('FIO-ESM-2-0', 'MPI-ESM1-2-HR', 'MPI-ESM1-2-LR')
 prds <- c('2021-2040', '2041-2060', '2061-2080')
 vars <- c('prec', 'tmax', 'tmin')
 srtm <-  '../raster/topograhy/srtm.tif'
+
+srtm_rast <- terra::rast(srtm)
+
 hlls <-  '../raster/topograhy/hlls.tif'
 
 plot(rast(srtm))
