@@ -14,6 +14,6 @@ terraOptions(tempdir = "G:/ProyectoR/tmpr")
 path <- 'G:/SAGA/modelos/FIO_ESM1_2_0/2030/ssp126'
 
 srtm <- terra::rast('G:/SAGA/ProyectoR/raster/topograhy/srtm.tif')
-srtm
+slpe <- terra::terrain(x = srtm, v = c('slope'), unit = 'degrees')
 
 
