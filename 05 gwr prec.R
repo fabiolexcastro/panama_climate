@@ -20,3 +20,4 @@ slpe <- terra::terrain(x = srtm_proj, v = c('slope'), unit = 'degrees')
 terra::writeRaster(slpe, filename = 'G:/ProyectoR/raster/topograhy/slpe_proj.tif')
 
 slpe_geog <- terra::project(slpe, terra::crs(srtm))
+terra::writeRaster(slpe_geog, filename = 'G:/ProyectoR/raster/topograhy/slpe_geog.tif')
