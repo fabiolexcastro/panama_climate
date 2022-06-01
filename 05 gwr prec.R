@@ -40,7 +40,7 @@ rm(i)
 purrr::map(.x = 1:length(fles), .f = function(i){
   
   finp <- fles[i]
-  fout <- glue('{dinp}/gwr_{basename(finp)}')
+  fout <- glue('{dirname(finp)}/gwr_{basename(finp)}')
   
   rslt <- rsaga.geoprocessor(
     lib = 'statistics_regression',
