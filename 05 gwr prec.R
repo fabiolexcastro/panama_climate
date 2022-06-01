@@ -9,6 +9,10 @@ rm(list = ls())
 # Change the temporal files directory
 terraOptions(tempdir = "G:/ProyectoR/tmpr")
 
+# Environmental SAGA ------------------------------------------------------
+envr <- 'G:/SAGA/saga-8.2.0_x64/saga-8.2.0_x64'
+envr <- rsaga.env(envr)
+
 # Load data ---------------------------------------------------------------
 
 path <- 'G:/SAGA/modelos/FIO_ESM1_2_0/2030/ssp126'
