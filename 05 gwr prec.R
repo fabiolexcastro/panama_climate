@@ -19,3 +19,4 @@ srtm_proj <- terra::project(srtm, '+proj=utm +zone=17 +datum=WGS84 +units=m +no_
 slpe <- terra::terrain(x = srtm_proj, v = c('slope'), unit = 'degrees')
 terra::writeRaster(slpe, filename = 'G:/ProyectoR/raster/topograhy/slpe_proj.tif')
 
+slpe_geog <- terra::project(slpe, terra::crs(srtm))
