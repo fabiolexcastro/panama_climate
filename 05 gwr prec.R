@@ -28,3 +28,22 @@ fles <- dir_ls(path, regexp = '.tif$')
 fles <- as.character(fles)
 fles <- grep('prec', fles, value = TRUE)
 
+# Probar con 
+i <- 1
+# Luego borrar 
+rm(i)
+
+purrr::map(.x = 1:length(fles), .f = function(i){
+  
+  finp <- fles[i]
+  fout <- glue('{dinp}/gwr_{basename(finp)}')
+  
+  rslt <- rsaga.geoprocessor(
+    lib = 'statistics_regression',
+    module = 'GWR for Grid Downscaling',
+    param = list(PREDICTORS = slpe,
+                 REGRESSION = fout,
+                 DEPENDENT = finp),
+    env = envr)
+  
+})
