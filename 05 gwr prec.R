@@ -21,3 +21,10 @@ terra::writeRaster(slpe, filename = 'G:/ProyectoR/raster/topograhy/slpe_proj.tif
 
 slpe_geog <- terra::project(slpe, terra::crs(srtm))
 terra::writeRaster(slpe_geog, filename = 'G:/ProyectoR/raster/topograhy/slpe_geog.tif')
+
+slpe <- 'G:/ProyectoR/raster/topograhy/slpe_geog.tif'
+
+fles <- dir_ls(path, regexp = '.tif$')
+fles <- as.character(fles)
+fles <- grep('prec', fles, value = TRUE)
+
