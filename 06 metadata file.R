@@ -3,7 +3,7 @@
 
 # Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(geodata, spatialEco, rgeos, gtools, dismo, sf, tidyverse, fs, corrplot)
+pacman::p_load(geodata, spatialEco, glue, rgeos, gtools, dismo, sf, tidyverse, fs, corrplot)
 
 g <- gc(reset = TRUE)
 rm(list = ls())
@@ -29,7 +29,19 @@ addm <- function(prd, mdl, ssp){
   cat(prd, mdl, ssp, '\n', sep = ' ')
   pth <- glue('{path}/{prd}/{mdl}/{ssp}')
   pth
+  drs <- glue('{pth}/{vars}')
   
+  i <- 1 # Correr y luego borrar
+  
+  purrr::map(.x = 1:length(drs), .f = function(i){
+    
+    cat(i, '\n')
+    dir <- drs[i]
+    dir <- dir_ls(dir)
+    
+    
+    
+  })
   
   
 }
