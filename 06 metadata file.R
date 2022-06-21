@@ -49,6 +49,10 @@ addm <- function(prd, mdl, ssp){
       fl <- dir_ls(dr)
       fl
       
+      no <- c('.aux.xml', '.var.cpg', '.vat.dbf')
+      fl <- fl[-grep(paste0(no, collapse = '|'), fl, value = F)]
+      fl
+      
       
     })
     
@@ -62,21 +66,6 @@ addm <- function(prd, mdl, ssp){
 
 
 # G:\CLIMATECHANGE\Modelos\2030\FIO-ESM-2-0\ssp126\Precipitacion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
