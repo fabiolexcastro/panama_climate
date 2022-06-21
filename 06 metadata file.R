@@ -52,6 +52,11 @@ addm <- function(prd, mdl, ssp){
       no <- c('.aux.xml', '.var.cpg', '.vat.dbf')
       fl <- fl[-grep(paste0(no, collapse = '|'), fl, value = F)]
       fl <- fl[-grep('vat', fl, value = F)]
+      fl <- as.character(fl)
+      fl <- fl[-grep('info', fl, value = F)]
+      fl
+      
+      
       
       
     })
