@@ -54,6 +54,7 @@ addm <- function(prd, mdl, ssp){
       fl <- fl[-grep('vat', fl, value = F)]
       fl <- as.character(fl)
       fl <- fl[-grep('info', fl, value = F)]
+      fl <- fl[-grep('prec30_as', fl, value = F)]
       fl
       
       
