@@ -18,6 +18,53 @@ vars <- c('Precipitacion', 'Tmaxima', 'Tminima')
 znes <- c('Arco Seco', 'Caribe Occidental', 'Caribe Oriental', 
           'Pacífico Occidental', 'Pacífico Oriental', 'Región Central')
 
+# Function ----------------------------------------------------------------
+
+prd <- prds[1]
+mdl <- mdls[1]
+ssp <- ssps[1]
+
+addm <- function(prd, mdl, ssp){
+  
+  cat(prd, mdl, ssp, '\n', sep = ' ')
+  pth <- glue('{path}/{prd}/{mdl}/{ssp}')
+  pth
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
