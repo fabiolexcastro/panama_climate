@@ -55,11 +55,15 @@ addm <- function(prd, mdl, ssp){
       fl <- as.character(fl)
       fl <- fl[-grep('info', fl, value = F)]
       fl <- fl[-grep('prec30_as$', fl, value = F)]
-      fl
+      fl <- mixedsort(fl)
       
-      rs <- terra::rast(fl)
+      rs <- purrr::map(.x = fl, .f = terra::rast)
       plot(rs[[1]])
       plot(rs[[14]])
+      
+      metadata(rs[[1]])
+      
+      
       
       
     })
