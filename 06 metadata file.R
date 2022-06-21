@@ -72,7 +72,7 @@ addm <- function(prd, mdl, ssp){
             feat = list(
               
               modelo_ssp <- ssp,
-              periodo <- pr,
+              periodo <- prd,
               modelo_gcm <- mdl
               
               
@@ -80,18 +80,22 @@ addm <- function(prd, mdl, ssp){
             
             fuente = 'CMIP6 - Worldclim', 
             webservice = 'worldclim.org',
+            citar_como = '',
             tiempo = tmpr[[i]]
             
           )
         
       }
       
-
-      
-      
+      # To add the metadata file 
+      for(i in 1:length(tmpr)){
+        metadata(rs[[i]]) <- mtdt[[i]]
+      }
       
       metadata(rs[[1]])
-      
+      metadata(rs[[13]])
+
+
       
       
       
