@@ -61,6 +61,35 @@ addm <- function(prd, mdl, ssp){
       plot(rs[[1]])
       plot(rs[[14]])
       
+      
+      # To create the metadata file
+      mtdt <- list()
+      tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Temporada 1', 'Temporada 2', 'Temporada 3', 'Temporada 4')
+      
+      for(i in 1:length(tmpr)){
+        
+        mtdt[[i]] <- list(
+            feat = list(
+              
+              modelo_ssp <- ssp,
+              periodo <- pr,
+              modelo_gcm <- mdl
+              
+              
+            ),
+            
+            fuente = 'CMIP6 - Worldclim', 
+            webservice = 'worldclim.org',
+            tiempo = tmpr[[i]]
+            
+          )
+        
+      }
+      
+
+      
+      
+      
       metadata(rs[[1]])
       
       
