@@ -12,7 +12,7 @@ rm(list = ls())
 # Load data ---------------------------------------------------------------
 path <- 'G:/CLIMATECHANGE/Modelos'
 prds <- c('2030', '2050', '2070')
-mdls <- c('FIO-ESM2-0', 'MPI-ESM1-2-HR', 'MPI-ESM1-2-LR')
+mdls <- c('FIO-ESM-2-0', 'MPI-ESM1-2-HR', 'MPI-ESM1-2-LR')
 ssps <- c('ssp126', 'ssp585')
 vars <- c('Precipitacion', 'Tmaxima', 'Tminima')
 znes <- c('Arco Seco', 'Caribe Occidental', 'Caribe Oriental', 
@@ -38,6 +38,19 @@ addm <- function(prd, mdl, ssp){
     cat(i, '\n')
     dir <- drs[i]
     dir <- dir_ls(dir)
+    dir <- as.character(dir)
+  
+    j <- 1 # Correr y luego borrar
+    
+    purrr::map(.x = 1:length(dir), .f = function(j){
+      
+      cat(j, '\n')
+      dr <- dir[j]
+      fl <- dir_ls(dr)
+      fl
+      
+      
+    })
     
     
     
@@ -48,7 +61,7 @@ addm <- function(prd, mdl, ssp){
 
 
 
-
+# G:\CLIMATECHANGE\Modelos\2030\FIO-ESM-2-0\ssp126\Precipitacion
 
 
 
