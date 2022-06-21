@@ -57,7 +57,7 @@ addm <- function(prd, mdl, ssp){
       fl <- fl[-grep('prec30_as$', fl, value = F)]
       fl <- mixedsort(fl)
       
-      rs <- purrr::map(.x = fl, .f = terra::rast)
+      rs <- purrr::map(.x = fl, .f = raster::raster)
       plot(rs[[1]])
       plot(rs[[14]])
       
@@ -94,8 +94,15 @@ addm <- function(prd, mdl, ssp){
       
       metadata(rs[[1]])
       metadata(rs[[13]])
-
-
+      
+      # To write 
+      for(k in 1:length(rs)){
+        
+        raster::writeRaster(x = rs[[i]], 
+                            filename = glue('{dirname(fl[k])}/{basename(fl[k])}.tif'), 
+                            overwrite = TRUE)
+        
+      }
       
       
       
