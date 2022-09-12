@@ -36,6 +36,5 @@ View(smmr)
 # Join the summarise table with the global table 
 tble <- full_join(tble, smmr, by = 'DATE')
 tble <- dplyr::select(tble, -mondel.mean)
-
-
- ((maxlany - minlany) / (Model_max - Model_min)) * (Model + minlany - Model_min + lanyminhourly - (lanymaxhourly + lanyminhourly)/ 2) ^ 2 + ((lanymaxhourly + lanyminhourly) / 2)
+tble <- mutate(tble, ecua_1 = ((maxlany - minlany) / (Model_max - Model_min)) * (Model + minlany - Model_min + lanyminhourly - (lanymaxhourly + lanyminhourly)/ 2) ^ 2 + ((lanymaxhourly + lanyminhourly) / 2))
+tble %>% dplyr::select(ecua_1) %>% head()
