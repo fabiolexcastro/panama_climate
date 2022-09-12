@@ -19,7 +19,10 @@ tail(tble)
 
 # Change the column format 
 tble <- mutate(tble, Model = as.numeric(Model), mondel.mean = as.numeric(model.mean),
-                     maxlany = as.numeric(maxlany), lanymaxhourly = as.numeric(lanymaxhourly), minlany = as.numeric(minlany))
+                     maxlany = as.numeric(maxlany), 
+                     lanymaxhourly = as.numeric(lanymaxhourly), 
+                     minlany = as.numeric(minlany),
+                     lanyminhourly = as.numeric(lanyminhourly))
 
 # To make the summarise ----------------------------------------------------
 smmr <- tble %>% 
@@ -30,3 +33,6 @@ smmr <- tble %>%
 
 View(smmr)
 
+
+
+ ((maxlany - minlany) / (Model_max - Model_min)) * (Model + minlany - Model_min + lanyminhourly - (lanymaxhourly + lanyminhourly)/ 2) ^ 2 + ((lanymaxhourly + lanyminhourly) / 2)
