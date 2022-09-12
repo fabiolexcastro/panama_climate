@@ -41,8 +41,11 @@ tble <- mutate(tble, ecua_1 = ((maxlany - minlany) / (Model_max - Model_min)) * 
 tble %>% dplyr::select(ecua_1) %>% head()
 
 # To date and hour 
-tbl2 <- mutate(tble, Date = as.Date(Date, format = '%d/%m/%Y'))
+tbl2 <- mutate(tble, DATE = as.Date(DATE, format = '%d/%m/%Y'))
 tbl2 <- as_tibble(tbl2)
+
+time <- tibble(time_1 = unique(tbl2$TIME))
+
 head(tbl2)
 
 
