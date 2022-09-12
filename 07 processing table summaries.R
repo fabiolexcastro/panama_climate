@@ -37,5 +37,16 @@ View(smmr)
 tble <- full_join(tble, smmr, by = 'DATE')
 tble <- dplyr::select(tble, -mondel.mean)
 tble <- mutate(tble, lanyminhourly = as.numeric(lanyminhourly))
-tble <- mutate(tble, ecua_1 = ((maxlany - minlany) / (Model_max - Model_min)) * (Model + minlany - Model_min + lanyminhourly - (lanymaxhourly + lanyminhourly)/ 2) ^ 2 + ((maxlany + minlany) / 2))
+tble <- mutate(tble, ecua_1 = ((maxlany - minlany) / (Model_max - Model_min)) * (Model + minlany - Model_min + lanyminhourly - (maxlany + minlany)/ 2) ^ 2 + ((maxlany + minlany) / 2))
 tble %>% dplyr::select(ecua_1) %>% head()
+
+# To date and hour 
+tbl2 <- mutate(tble, Date = as.Date(Date, format = '%d/%m/%Y'))
+tbl2 <- as_tibble(tbl2)
+head(tbl2)
+
+
+# To make the graph 
+
+ggplot(data = tble) + 
+  geom_line(aes(x = ))
