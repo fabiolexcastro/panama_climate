@@ -52,6 +52,6 @@ head(tbl2)
 # To make the graph 
 
 ggplot(data = tble) + 
-  geom_line(aes(x = DATE, y = ecua_1), col = 'red') +
-  geom_line(aes(x = DATE, y = maxlany), col = 'blue') + 
-  geom_line(aes(x = DATE, y = minlany), col = 'green')
+  geom_line(aes(x = DATE, y = ecua_1, group = 1), col = 'red') +
+  geom_line(aes(x = DATE, y = maxlany, group = 1), col = 'blue') + 
+  geom_line(aes(x = DATE, y = minlany, group = 1), col = 'green')
