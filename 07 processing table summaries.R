@@ -82,6 +82,8 @@ tbl2_2 <- mutate(tbl2_2, DATE = dtes)
 tbl2_2 <- mutate(tbl2_2, DATE_2 = paste0(DATE, ' ', TIME_2))
 
 tbl3 <- rbind(tbl2_1, tbl2_2)
+tbl3 <- mutate(tbl3, DATE_3 = ydm_hms(DATE_2))
+tbl3 <- dplyr::select(tbl3, DATE_3, everything())
 
 
 # To make the graph 
