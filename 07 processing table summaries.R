@@ -54,6 +54,10 @@ tbl2 <- mutate(tbl2, jornada = str_sub(TIME, nchar(TIME) - 6, nchar(TIME))) %>%
 tbl2 <- mutate(tbl2, jornada = str_sub(jornada, 1, 1))
 table(tbl2$jornada)
 
+tbl2 <- mutate(tbl2, TIME_2 = parse_number(TIME_2)) %>% 
+  dplyr::select(DATE, TIME, jornada, everything())
+pull(tbl2, TIME_2)
+
 
 # To make the graph 
 
