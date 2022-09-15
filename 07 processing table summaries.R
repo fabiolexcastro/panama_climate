@@ -71,8 +71,13 @@ head(tbl2, 4)
 # Fill NAS  ---------------------------------------------------------------
 tbl2_1 <- drop_na(tbl2)
 nrow(tbl2_1); head(tbl2_1)
-tbl2_2 <- tbl2[!complete.cases(tbl2)]
+tbl2_2 <- tbl2[!complete.cases(tbl2),]
 nrow(tbl2_1); head(tbl2_2)
+
+
+seq(as.Date('1991-13-01', format = '%Y-%d-%M'), as.Date('1991-31-01', format = '%Y-%d-%M'), by = 'day')
+
+
 
 
 # To make the graph 
