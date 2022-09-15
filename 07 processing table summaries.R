@@ -63,6 +63,11 @@ tbl2 <- dplyr::select(tbl2, DATE, TIME, TIME_2, jornada, everything())
 tbl2 <- mutate(tbl2, TIME_2 = paste0(TIME_2, ':00:00'))
 head(tbl2, 4)
 
+# Add the time 
+tbl2 <- mutate(tbl2, DATE_2 = paste0(DATE, ' ', TIME_2))
+tbl2 <- dplyr::select(tbl2, DATE, DATE_2, TIME, TIME_2, jornada, everything())
+head(tbl2, 4)
+
 
 # To make the graph 
 
