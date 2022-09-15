@@ -49,7 +49,7 @@ time <- tibble(time_1 = unique(tbl2$TIME))
 head(tbl2)
 
 
-tbl2 <- mutate(tbl2, jornada = nchar(TIME) - 6) %>% 
+tbl2 <- mutate(tbl2, jornada = str_sub(TIME, nchar(TIME) - 6, nchar(TIME))) %>% 
   dplyr::select(DATE, TIME, jornada, everything())
 
 
