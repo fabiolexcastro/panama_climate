@@ -78,6 +78,8 @@ nrow(tbl2_1); head(tbl2_2)
 dtes <- seq(as.Date('1991-13-01', format = '%Y-%d-%m'), as.Date('1991-31-01', format = '%Y-%d-%m'), by = 'day')
 dtes <- purrr::map(.x = 1:length(dtes), .f = function(i){rep(dtes[i], 24)})
 dtes <- do.call(what = 'c', args = dtes)
+tbl2_2 <- mutate(tbl2_2, DATE = dtes)
+
 
 # To make the graph 
 
