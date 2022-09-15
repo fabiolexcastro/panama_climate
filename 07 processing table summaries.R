@@ -59,6 +59,9 @@ tbl2 <- mutate(tbl2, TIME_2 = parse_number(TIME)) %>%
 pull(tbl2, TIME_2)
 tbl2 <- mutate(tbl2, TIME_2 = ifelse(jornada == 'p', TIME_2 + 12, TIME_2))
 head(tbl2, 4)
+tbl2 <- dplyr::select(tbl2, DATE, TIME, TIME_2, jornada, everything())
+tbl2 <- mutate(tbl2, TIME_2 = paste0(TIME_2, ':00:00'))
+head(tbl2, 4)
 
 
 # To make the graph 
