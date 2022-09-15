@@ -79,7 +79,7 @@ dtes <- seq(as.Date('1991-13-01', format = '%Y-%d-%m'), as.Date('1991-31-01', fo
 dtes <- purrr::map(.x = 1:length(dtes), .f = function(i){rep(dtes[i], 24)})
 dtes <- do.call(what = 'c', args = dtes)
 tbl2_2 <- mutate(tbl2_2, DATE = dtes)
-
+tbl2_2 <- mutate(tbl2_2, DATE = paste0(DATE, ' ', TIME_2))
 
 # To make the graph 
 
