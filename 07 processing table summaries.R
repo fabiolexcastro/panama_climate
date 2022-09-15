@@ -68,6 +68,12 @@ tbl2 <- mutate(tbl2, DATE_2 = paste0(DATE, ' ', TIME_2))
 tbl2 <- dplyr::select(tbl2, DATE, DATE_2, TIME, TIME_2, jornada, everything())
 head(tbl2, 4)
 
+# Fill NAS  ---------------------------------------------------------------
+tbl2_1 <- drop_na(tbl2)
+nrow(tbl2_1); head(tbl2_1)
+tbl2_2 <- tbl2[!complete.cases(tbl2)]
+nrow(tbl2_1); head(tbl2_2)
+
 
 # To make the graph 
 
