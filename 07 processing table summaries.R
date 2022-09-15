@@ -49,6 +49,10 @@ time <- tibble(time_1 = unique(tbl2$TIME))
 head(tbl2)
 
 
+tbl2 <- mutate(tbl2, jornada = nchar(TIME) - 6) %>% 
+  dplyr::select(DATE, TIME, jornada, everything())
+
+
 # To make the graph 
 
 ggplot(data = tble) + 
