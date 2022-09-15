@@ -75,9 +75,8 @@ tbl2_2 <- tbl2[!complete.cases(tbl2),]
 nrow(tbl2_1); head(tbl2_2)
 
 
-seq(as.Date('1991-13-01', format = '%Y-%d-%M'), as.Date('1991-31-01', format = '%Y-%d-%M'), by = 'day')
-
-
+dtes <- seq(as.Date('1991-13-01', format = '%Y-%d-%m'), as.Date('1991-31-01', format = '%Y-%d-%m'), by = 'day')
+dtes <- purrr::map(.x = 1:length(dtes), .f = function(i){rep(dtes[i], 24)})
 
 
 # To make the graph 
