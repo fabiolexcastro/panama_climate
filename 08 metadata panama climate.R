@@ -17,4 +17,17 @@ vars <- c('prec', 'tmax', 'tmin')
 
 # Function ----------------------------------------------------------------
 
+# Proof
+prd <- prds[1]
+mdl <- mdls[1]
+ssp <- ssps[1]
 
+add_metadata <- function(prd, mdl, ssp){
+  
+  cat(prd, mdl, ssp, '\n', sep = ' ')
+  
+  # To list the files
+  pth <- glue('{path}/{prd}/{mdl}/{ssp}')
+  
+  
+}
