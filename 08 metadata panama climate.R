@@ -2,7 +2,7 @@
 
 # Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(tidyverse, glue, terra, raster, fs, readxl, hablar)
+pacman::p_load(tidyverse, glue, terra, raster, rgeos, gtools, fs, readxl, hablar)
 
 g <- gc(reset = TRUE)
 rm(list = ls())
@@ -29,6 +29,9 @@ add_metadata <- function(prd, mdl, ssp){
   # To list the files
   pth <- glue('{path}/{ssp}/{mdl}/{prd}')
   fls <- dir_ls(pth)
+  fls <- as.character(fls)
+  fls <- mixedsort(fls)
   
+  # To create the metadata file
   
 }
