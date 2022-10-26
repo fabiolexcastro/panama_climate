@@ -58,7 +58,8 @@ add_metadata <- function(prd, mdl, ssp){
       
       fuente = 'CMIP 6 - Worldclim',
       webservice = 'worldclim.org',
-      mes = tmpr[i]
+      mes = tmpr[i],
+      resolucion = '1 km2'
       
     )
     
@@ -69,5 +70,6 @@ add_metadata <- function(prd, mdl, ssp){
     metadata(prec[[i]]) <- mtdt_prec[[i]]
   }
   
+  writeRaster(x = prec[[1]], filename = './prec_borrardespues.tif')
   
 }
