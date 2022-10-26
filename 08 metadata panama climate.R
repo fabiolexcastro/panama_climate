@@ -64,4 +64,10 @@ add_metadata <- function(prd, mdl, ssp){
     
   }
   
+  # To add the metadata file (prec)
+  for(i in 1:12){
+    metadata(prec[[i]]) <- mtdt_prec[[i]]
+  }
+  
+  
 }
