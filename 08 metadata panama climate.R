@@ -38,9 +38,16 @@ add_metadata <- function(prd, mdl, ssp){
   tmin <- grep('tmin', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% purrr::map(.x = ., .f = raster::raster)
   
   # To create the metadata file
-  mtdt <- list()
+  
+  # Precipitation
+  mtdt_prec <- list()
   tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Temporada 1', 'Temporada 2', 'Temporada 3', 'Temporada 4')
   
+  for(i in 1:12){
+    
+    
+    
+  }
   
   
 }
