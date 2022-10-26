@@ -2,7 +2,7 @@
 
 # Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(tidyverse, glue, fs, readxl, hablar)
+pacman::p_load(tidyverse, glue, terra, raster, fs, readxl, hablar)
 
 g <- gc(reset = TRUE)
 rm(list = ls())
