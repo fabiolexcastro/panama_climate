@@ -32,6 +32,13 @@ add_metadata <- function(prd, mdl, ssp){
   fls <- as.character(fls)
   fls <- mixedsort(fls)
   
+  # To read the files as a raster 
+  prec <- grep('prec', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% terra::rast()
+  
   # To create the metadata file
+  mtdt <- list()
+  tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Temporada 1', 'Temporada 2', 'Temporada 3', 'Temporada 4')
+  
+  
   
 }
