@@ -27,7 +27,7 @@ add_metadata <- function(prd, mdl, ssp){
   cat(prd, mdl, ssp, '\n', sep = ' ')
   
   # To list the files
-  pth <- glue('{path}/{prd}/{mdl}/{ssp}')
+  pth <- glue('{path}/{ssp}/{mdl}/{prd}')
   fls <- dir_ls(pth)
   
   
