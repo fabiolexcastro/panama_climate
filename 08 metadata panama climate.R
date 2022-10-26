@@ -34,7 +34,8 @@ add_metadata <- function(prd, mdl, ssp){
   
   # To read the files as a raster 
   prec <- grep('prec', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% purrr::map(.x = ., .f = raster::raster)
-  
+  tmax <- grep('tmax', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% purrr::map(.x = ., .f = raster::raster)
+  tmin <- grep('tmin', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% purrr::map(.x = ., .f = raster::raster)
   
   # To create the metadata file
   mtdt <- list()
