@@ -33,7 +33,8 @@ add_metadata <- function(prd, mdl, ssp){
   fls <- mixedsort(fls)
   
   # To read the files as a raster 
-  prec <- grep('prec', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% terra::rast()
+  prec <- grep('prec', fls, value = TRUE) %>% grep('.tif', ., value = TRUE) %>% purrr::map(.x = ., .f = raster::raster)
+  
   
   # To create the metadata file
   mtdt <- list()
