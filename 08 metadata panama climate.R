@@ -41,9 +41,26 @@ add_metadata <- function(prd, mdl, ssp){
   
   # Precipitation
   mtdt_prec <- list()
-  tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic')
+  tmpr <- c('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre')
   
   for(i in 1:12){
+    
+    mtdt_prec[[i]] <- list(
+      feat = list(
+        
+        modelo_ssp <- ssp, 
+        periodo <- prd,
+        modelo_gcm <- mdl,
+        variable <- 'Precipitacion',
+        units <- 'mm'
+        
+      ),
+      
+      fuente = 'CMIP 6 - Worldclim',
+      webservice = 'worldclim.org',
+      mes = tmpr[i]
+      
+    )
     
   }
   
