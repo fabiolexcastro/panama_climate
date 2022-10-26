@@ -41,13 +41,10 @@ add_metadata <- function(prd, mdl, ssp){
   
   # Precipitation
   mtdt_prec <- list()
-  tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Temporada 1', 'Temporada 2', 'Temporada 3', 'Temporada 4')
+  tmpr <- c('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic')
   
   for(i in 1:12){
     
-    
-    
   }
-  
   
 }
