@@ -50,5 +50,6 @@ r_sol <- purrr::map(.x = 1:length(Dates), .f = function(i){
 
 r_sol <- unlist(r_sol)
 
-
+r_sol <- tibble(dates = Dates, r_solar = r_sol)
+write.csv(r_sol, './solar_radiation.csv', row.names = F)
 
