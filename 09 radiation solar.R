@@ -8,8 +8,8 @@ p_load(lubridate, tidyverse, glue, fs, sf, readxl)
 
 startDate <- as.POSIXct('1990-01-01 0:00', format = '%Y-%m-%d %H')
 endDate <- as.POSIXct('2020-12-31 24:00', format = '%Y-%m-%d %H')
-seq(as.POSIXct("2015-1-1 0:00"), as.POSIXct("2015-1-1 12:00"), by = "hour")
-seq(startDate, endDate, by = 'hour')
+Dates <- seq(startDate, endDate, by = 'hour')
+
 
 
 Radiation <- function(date, long=long_glb, la=lat_glb, tz=time_zone) {
